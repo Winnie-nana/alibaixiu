@@ -56,11 +56,11 @@ $('#avatar').on('change', function () {
     })
 })
 
-let userId
+let userIds
 // 编辑用户功能 因为每一个用户里的遍历功能都是跟着数据一起后来生成的 所以这里使用事件委托,将点击事件绑定在父元素tbody身上
 $('tbody').on('click', '.edit', function () {
 
-    userId = $(this).parents().attr('data-id')
+    userIds = $(this).parents().attr('data-id')
     // 获取到编辑按钮的父元素 tr
     let trObj = $(this).parents('tr');
 
@@ -85,6 +85,7 @@ $('tbody').on('click', '.edit', function () {
     $('#nickName').val(trObj.children().eq(3).text());
 
     let status = trObj.children().eq(4).text();
+
 
     if (status == '激活') {
         $('#jh').prop('checked', true);
@@ -112,7 +113,7 @@ $('#modifyBtn').on('click', function () {
     //发送ajax 请求
     $.ajax({
         type: 'put',
-        url: '/users/' + userId,
+        url: '/users/' + userIds,
         data: $('#userForm').serialize(),
         success: function (res) {
             console.log(res);

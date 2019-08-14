@@ -92,28 +92,12 @@
   <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
   <script src="../assets/js/index.js"></script>
   <script src="../assets/vendors/art-template/template-web.js"></script>
+  <script src="../assets/js/common.js"></script>
   <script type="text/html" id="indexTpl">
 
   
   </script>
   <script>NProgress.done()</script>
-  <script>
-    $('#logout').on('click',function(){
-        let isConfirm= confirm('您确定要退出登录吗?');
-        if(isConfirm){
-          $.ajax({
-            url:'/logout',
-            type:'post',
-            success:function(){
-              console.log('退出成功');    
-            },
-            error:function(){
-              console.log('退出失败');    
-            }
-          })
-        }
-    })
-  
-  </script>
+ 
 </body>
 </html>

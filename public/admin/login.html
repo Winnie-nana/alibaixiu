@@ -1,4 +1,9 @@
-
+<!-- <script src="/login/status"></script>
+<script>
+  if(!isLogin){
+    location.href='login.html'
+  }
+</script> -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -52,7 +57,12 @@ $('#loginBtn').on('click',function(){
       url:'/login',
       data:{email:email,password:password},
       success:function(res){
-        location.href='index.html';
+        if(res.role=='admin'){
+          location.href='/admin/index.html';
+        }else{
+          location.href='index.html';
+        }
+       
       },
       error:function(){
         $('.alert').fadeIn(1000).delay(1000).fadeOut(1000);

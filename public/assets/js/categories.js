@@ -50,6 +50,7 @@ $('tbody').on('click','.edit',function(){
     $('#className').val(trObj.children(2).eq(2).text());
     $('.addBtn').hide();
     $('.editBtn').show();
+  
 })
 
 // 给修改按钮添加点击事件

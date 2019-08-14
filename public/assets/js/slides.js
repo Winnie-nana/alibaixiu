@@ -36,7 +36,7 @@ $('#sildesBtn').on('click', function () {
         url: '/slides',
         data: $('#slidesForm').serialize(),
         success: function (res) {
-            console.log(res);
+            // console.log(res);
             sArr = res;
             render(sArr)
         }
@@ -45,7 +45,7 @@ $('#sildesBtn').on('click', function () {
 
 function render(data) {
     let html = template('sildesTpl', { list: data });
-    console.log(html);
+    // console.log(html);
     
     $('tbody').html(html)
 }
